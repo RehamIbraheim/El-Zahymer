@@ -67,7 +67,21 @@ public class SWProject {
     }
     }
 }
-    
+    public class UserFunction {
 
     
-
+   public static ArrayList<User> mylist = new ArrayList<User>();
+    
+    public static void register() {
+        Scanner in = new Scanner(System.in);
+        User p = new User();
+        System.out.print("Name: ");
+        p.UserName = in.nextLine();
+        System.out.print("Password: ");
+        p.Password = in.nextLine();
+        System.out.print("PhoneNum: ");
+        p.PhoneNum = in.nextInt();
+        mylist.add(p);
+        }
+    
+   }}}
