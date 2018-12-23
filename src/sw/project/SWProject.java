@@ -67,7 +67,66 @@ public class SWProject {
     }
     }
 }
+    public class UserFunction {
+
     
+   public static ArrayList<User> mylist = new ArrayList<User>();
+    
+    public static void register() {
+        Scanner in = new Scanner(System.in);
+        User p = new User();
+        System.out.print("Name: ");
+        p.UserName = in.nextLine();
+        System.out.print("Password: ");
+        p.Password = in.nextLine();
+        System.out.print("PhoneNum: ");
+        p.PhoneNum = in.nextInt();
+        mylist.add(p);
+        }
+    
+    public static boolean login() {
+       // mylist = null;
+        Scanner in = new Scanner(System.in);
+        User p = new User();
+        System.out.print("Name: ");
+        p.UserName = in.nextLine();
+        System.out.print("Password: ");
+        p.Password = in.nextLine();
+        boolean check = SearchUser(p);
+        if(check==true)
+        {
+        System.out.println("this user login ");
+        }
+        else
+        {
+            System.out.println("user name or pass wrong Or you need to Register ");
+        }
+        return check;
+        
+        }
+    public static boolean SearchUser(User user)
+    {
+        for(int i=0;i<mylist.size();i++)
+        {
+            User checkU = mylist.get(i);
+            if(user.UserName.equals(checkU.UserName)&&user.Password.equals(checkU.Password))
+            {
+                return true ;
+            }
+        }
+        return false ;
+    }
+
+    
+    public static void Print(){
+        for(int i=0; i<mylist.size(); i++){
+            User user=mylist.get(i);
+            System.out.println("Name: "+user.UserName + "  Password: " +user.Password+ "  PhoneNum: "+ user.PhoneNum);
+        }
+    
+    
+    }
+}
 
     
 
